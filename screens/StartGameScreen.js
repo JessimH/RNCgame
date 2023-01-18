@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         marginTop: 100,
         padding: 16,
         marginHorizontal: 24,
-        backgroundColor: '#72063c',
+        backgroundColor: '#4e0329',
         borderRadius: 8,
         // ANDROID BOX SHADOW REACT NATIVE
         elevation: 4,
