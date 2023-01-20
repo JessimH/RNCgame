@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, TextInput, Alert, StyleSheet } from 'react-native';
 import PrimaryButton from '../components/PrimaryButton';
 
-function StartGameScreen() {
+function StartGameScreen({ onPressFunction }) {
 
     const [enteredNumber, setEnteredNumber] = useState('');
 
@@ -30,9 +30,8 @@ function StartGameScreen() {
             )
             return
         }
-        else {
-            console.log(chosenNumber);
-        }
+
+        onPressFunction(chosenNumber);
     }
 
     return (
