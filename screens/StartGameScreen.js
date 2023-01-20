@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { View, TextInput, Alert, StyleSheet } from 'react-native';
 import PrimaryButton from '../components/PrimaryButton';
+import Colors from '../constants/colors';
 
 function StartGameScreen({ onPressFunction }) {
 
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         padding: 16,
         marginHorizontal: 24,
-        backgroundColor: '#3b021f',
+        backgroundColor: Colors.primary700,
         borderRadius: 8,
         // ANDROID BOX SHADOW REACT NATIVE
         elevation: 4,
@@ -83,8 +84,8 @@ const styles = StyleSheet.create({
         width: 50,
         fontSize: 32,
         borderBottomWidth: 2,
-        borderBottomColor: '#ddb52f',
-        color: '#ddb52f',
+        borderBottomColor: Colors.accent500,
+        color: Colors.accent500,
         marginVertical: 8,
         fontWeight: 'bold',
         textAlign: 'center'
