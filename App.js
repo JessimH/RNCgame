@@ -6,12 +6,24 @@ import GameOverScreen from './screens/GameOverScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 import Colors from './constants/colors';
 
+import { useFonts } from 'expo-font'
+import AppLoading from 'expo-app-loading';
+
 const backgroundImage = require('./assets/images/background.png');
 
 export default function App() {
 
   const [userNumber, setUserNumber] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+
+  const [fontsLoaded] = useFonts({
+    'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+    'open-sans-bold': require('./assets/fonts/OpenSans-Regular.ttf'),
+  })
+
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
 
   const startGameHandler = (selectedNumber) => {
     setUserNumber(selectedNumber);
