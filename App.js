@@ -15,6 +15,7 @@ export default function App() {
 
   const [userNumber, setUserNumber] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [guessRound, setGuessRound] = useState(0);
 
   const [fontsLoaded] = useFonts({
     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
@@ -29,8 +30,15 @@ export default function App() {
     setUserNumber(selectedNumber);
   }
 
-  const gameOverHandler = () => {
+  const gameOverHandler = (numberOfRounds) => {
     setGameOver(true);
+    setGuessRound(numberOfRounds);
+  }
+
+  const startNewGameHandler = () => {
+    setUserNumber(null);
+    setGuessRound(0);
+    setGameOver(false);
   }
 
   let screen = <StartGameScreen onPressFunction={startGameHandler} />
@@ -40,7 +48,7 @@ export default function App() {
   }
 
   if (gameOver) {
-    screen = <GameOverScreen />
+    screen = <GameOverScreen userNumber={userNumber} roundsNbr={guessRound} onStartNewGame={startNewGameHandler} />
   }
 
 
