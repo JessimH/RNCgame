@@ -3,8 +3,15 @@ import React from 'react'
 
 const GameScreen = () => {
     return (
-        <View>
-            <Text>GameScreen</Text>
+        <View style={styles.screen}>
+            <Text>Opponent's Gess</Text>
+            <View>
+                <Text>Higher ou Lower</Text>
+            </View>
+            {/* + & - buttons */}
+            <View>
+                {/* LOG ROUNDS */}
+            </View>
         </View>
     )
 }
@@ -12,5 +19,8 @@ const GameScreen = () => {
 export default GameScreen
 
 const styles = StyleSheet.create({
-
+    screen: {
+        flex: 1,
+        padding: 12,
+    }
 })
