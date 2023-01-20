@@ -1,13 +1,10 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
 
-function PrimaryButton({ children }) {
-    const pressHandler = () => {
-        console.log('Button Pressed')
-    }
+function PrimaryButton({ children, onPressFunction }) {
     return (
         <View style={styles.buttonOuterContainer}>
             <Pressable
-                onPress={pressHandler}
+                onPress={onPressFunction}
                 // IOS pressed style 
                 style={({ pressed }) =>
                     pressed
