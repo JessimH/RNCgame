@@ -1,8 +1,11 @@
-import { View, Text, StyleSheet, Alert } from 'react-native'
+import { View, StyleSheet, Alert } from 'react-native'
 import { React, useState, useEffect } from 'react'
 import Title from '../components/ui/Title'
 import NumberContainer from '../components/game/NumberContainer';
 import PrimaryButton from '../components/ui/PrimaryButton';
+import Card from '../components/ui/Card';
+import InstructionText from '../components/ui/InstructionText';
+import ButtonsContainer from '../components/ui/ButtonsContainer';
 
 function generateRandomBetween(min, max, exclude) {
     const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -53,13 +56,17 @@ const GameScreen = ({ userNumber, onGameOver }) => {
         <View style={styles.screen}>
             <Title>Opponent's Guess</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
-            <View>
-                <Text>Higher ou Lower</Text>
-            </View>
-            <View>
-                <PrimaryButton onPressFunction={nextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
-                <PrimaryButton onPressFunction={nextGuessHandler.bind(this, 'higher')}>+</PrimaryButton>
-            </View>
+            <Card>
+                <InstructionText style={styles.instructionText}>Higher or Lower</InstructionText>
+                <ButtonsContainer>
+                    <View style={styles.buttonContainer}>
+                        <PrimaryButton onPressFunction={nextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
+                    </View>
+                    <View style={styles.buttonContainer}>
+                        <PrimaryButton onPressFunction={nextGuessHandler.bind(this, 'higher')}>+</PrimaryButton>
+                    </View>
+                </ButtonsContainer>
+            </Card>
             <View>
                 {/* LOG ROUNDS */}
             </View>
@@ -73,5 +80,11 @@ const styles = StyleSheet.create({
     screen: {
         padding: 24,
     },
+    buttonContainer: {
+        flex: 1
+    },
+    instructionText: {
+        marginBottom: 12
+    }
 
 })
