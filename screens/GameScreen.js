@@ -109,7 +109,8 @@ const styles = StyleSheet.create({
         marginBottom: 12
     },
     listContainer: {
-        padding: 16
+        padding: 16,
+        overflow: 'hidden',
     }
 
 })

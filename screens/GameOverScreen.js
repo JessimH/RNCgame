@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View, Image, SafeAreaView, Dimensions } from 'react-native'
 import React from 'react'
 import Title from '../components/ui/Title'
 import Colors from '../constants/colors'
@@ -24,6 +24,8 @@ const GameOverScreen = ({ roundsNbr, userNumber, onStartNewGame }) => {
 
 export default GameOverScreen
 
+const deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
     screen: {
         marginTop: 100,
@@ -33,9 +35,9 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         overflow: 'hidden',
-        borderRadius: 150,
-        width: 300,
-        height: 300,
+        borderRadius: deviceWidth < 380 ? 75 : 150,
+        width: deviceWidth < 380 ? 150 : 300,
+        height: deviceWidth < 380 ? 150 : 300,
         borderWidth: 3,
         borderColor: Colors.primary700,
         margin: 36,
