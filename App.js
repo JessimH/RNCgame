@@ -8,6 +8,7 @@ import Colors from './constants/colors';
 
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading';
+import { StatusBar } from 'expo-status-bar';
 
 const backgroundImage = require('./assets/images/background.png');
 
@@ -54,21 +55,24 @@ export default function App() {
 
 
   return (
-    <LinearGradient
-      style={styles.rootScreen}
-      colors={[Colors.primary800, Colors.accent500]}
-    >
-      <ImageBackground
-        source={backgroundImage}
+    <>
+      <StatusBar style='light' />
+      <LinearGradient
         style={styles.rootScreen}
-        resizeMode='cover'
-        imageStyle={styles.backgroundImage}
+        colors={[Colors.primary800, Colors.accent500]}
       >
-        <SafeAreaView>
-          {screen}
-        </SafeAreaView>
-      </ImageBackground>
-    </LinearGradient >
+        <ImageBackground
+          source={backgroundImage}
+          style={styles.rootScreen}
+          resizeMode='cover'
+          imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView>
+            {screen}
+          </SafeAreaView>
+        </ImageBackground>
+      </LinearGradient >
+    </>
   );
 }
 
