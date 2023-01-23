@@ -6,7 +6,7 @@ import {
     StyleSheet,
     useWindowDimensions,
     KeyboardAvoidingView,
-    ScrollView
+    ScrollView,
 } from 'react-native';
 import PrimaryButton from '../components/ui/PrimaryButton';
 import Colors from '../constants/colors';
@@ -28,6 +28,7 @@ function StartGameScreen({ onPressFunction }) {
     const resetInputHandler = () => {
         setEnteredNumber('');
     }
+
 
     const confirmInputHandler = () => {
         const chosenNumber = parseInt(enteredNumber);
