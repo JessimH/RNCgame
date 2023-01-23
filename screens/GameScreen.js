@@ -100,6 +100,7 @@ export default GameScreen
 const styles = StyleSheet.create({
     screen: {
         padding: 24,
+        alignItems: 'center',
     },
     buttonContainer: {
         flex: 1
